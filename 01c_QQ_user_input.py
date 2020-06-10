@@ -1,9 +1,9 @@
 # Quiz Quest Component 1c - get user input for certain variables needed (Trialling)
 
-# String Checker
+# String Checker Function
 dif_range = ["hard", "normal", "easy"]
 
-
+# Mrs Gottschalk's string checker starts here (edited)
 def str_checker(question, to_check, error):
     valid = False
     while not valid:
@@ -16,16 +16,17 @@ def str_checker(question, to_check, error):
                 return response
             elif response == item[0]:
                 return item
-        print("Please enter either {}".format(error))
+        print("Please enter either {}\n".format(error))
+# Mrs Gottschalk's string checker ends here (edited)
 
-# Set all the vaiables when do
-difficulty = str_checker("Difficulty (Easy, Normal or Hard): ",dif_range, "Hard, Normal or Easy").lower()
+# For loop for testing purposes
+for item in range(0,2):
+    difficulty = str_checker("Difficulty (Easy, Normal or Hard): ",dif_range, "Hard, Normal or Easy").lower()
 
-if difficulty == "easy" or difficulty == "e":
-    high = 10
-elif difficulty == "normal" or difficulty == "n":
-    high = 50
-elif difficulty == "hard" or difficulty == "h":
-    high = 100
-
-print(high)
+    # Assigns the difficulty
+    if difficulty == "easy" or difficulty == "e":
+        print("Difficulty set to Easy\n")
+    elif difficulty == "normal" or difficulty == "n":
+        print("Difficulty set to Normal\n")
+    else:
+        print("Difficulty set to Hard\n")
