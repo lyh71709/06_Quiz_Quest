@@ -1,4 +1,4 @@
-# Quiz Quest Component 1a - have an integer checking function
+# Quiz Quest Component 1 - have an integer checking function
 
 
 # Int_check Function goes here

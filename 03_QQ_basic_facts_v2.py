@@ -1,7 +1,7 @@
 # Quiz Quest Component 3 - Generate basic fact questions from the random numbers generated
 # v2 - Ensures that the difficulty of the quiz is not too difficult for
 #      easy difficulty and ensures that all questions are suitable to be answered without a calculator
-#   e.g. division equals a whole number, subtraction doesn't go negative and multiplication answers don't surpass 144.
+#      e.g. division equals a whole number, subtraction doesn't go negative and multiplication answers don't surpass 144.
 
 import random
 
@@ -18,7 +18,7 @@ def basic_facts_q(operator, one, two):
         # Ensures that the difference is a postive integer or 0
         answer = one - two
         cancel = "0"
-        # If the first answer has a negative
+        # If the first answer is a negative integer it will switch one and two around to make the answer positive
         if answer < 0:
             cancel = "cancel"
             answer = two - one
@@ -34,13 +34,16 @@ def basic_facts_q(operator, one, two):
     else:
         # Added a while loop to generate valid numbers wehn dividing
         while (one/two) != (one//two):
-            one = random.randint(20, 50)
-            two = random.randint(0, 50)
+            one = random.randint(2, 50)
+            two = random.randint(2, 50)
             continue
         answer = one / two
 
     # Prints the question
+
     print(answer)
+    if answer == 69:
+        print("Hehe nice")
     # If statement when the subtraction equation is not valid
     if operator == "-" and cancel == "cancel":
         response = int(input("{} {} {} = ".format(two, operator, one)))
@@ -60,7 +63,7 @@ low = 1
 high = 50
 
 # Generates 10 questions to test randomness
-for item in range(0, 10):
-    # question uses the basicfacts function to make a random question
+for item in range(0, 4):
+    # question uses the basicfacts_q function to make a random question
     # Chooses randomly an operator and the two numbers that make up the equation
     question = basic_facts_q(random.choice(operators), random.randint(low,high), random.randint(low,high))
