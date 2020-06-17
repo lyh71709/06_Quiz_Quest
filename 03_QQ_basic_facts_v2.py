@@ -62,8 +62,6 @@ operators = ["+", "-", "x", "/"]
 low = 1
 high = 50
 
-# Generates 10 questions to test randomness
-for item in range(0, 4):
-    # question uses the basicfacts_q function to make a random question
-    # Chooses randomly an operator and the two numbers that make up the equation
-    question = basic_facts_q(random.choice(operators), random.randint(low,high), random.randint(low,high))
+# question uses the basicfacts_q function to make a random question
+# Chooses randomly an operator and the two numbers that make up the equation
+question = basic_facts_q(random.choice(operators), random.randint(low, high), random.randint(low ,high))
