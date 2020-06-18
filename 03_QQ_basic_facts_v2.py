@@ -21,7 +21,7 @@ def basic_facts_q(operator, one, two):
         # If the first answer is a negative integer it will switch one and two around to make the answer positive
         if answer < 0:
             cancel = "cancel"
-            answer = two - one
+            answer = two - one  
 
     # Multiplication question
     elif operator == "x":
