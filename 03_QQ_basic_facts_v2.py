@@ -58,7 +58,7 @@ def basic_facts_q(operator, one, two):
     print()
 
 operators = ["+", "-", "x", "/"]
-# Low/High (Difficulty) set to easy for testing purposes
+# Low/High set to default for testing purposes
 low = 1
 high = 50
 
