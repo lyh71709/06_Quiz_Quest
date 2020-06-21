@@ -30,9 +30,9 @@ def basic_facts_q(operator, num_one, num_two):
     # Multiplication question
     elif operator == "x":
         # Ensures that the numbers being multiplied have a product less that 144
-        one = random.randint(0, 12)
-        two = random.randint(0, 12)
-        answer = one * two
+        num_one = random.randint(0, 12)
+        num_two = random.randint(0, 12)
+        answer = num_one * num_two
 
     # Divide question
     else:
@@ -50,10 +50,10 @@ def basic_facts_q(operator, num_one, num_two):
         print("Hehe nice")
     # If statement when the subtraction equation is not valid
     if operator == "-" and cancel == "cancel":
-        response = int(input("{} {} {} = ".format(two, operator, one)))
+        response = int(input("{} {} {} = ".format(num_two, operator, num_one)))
     # Normal response for every equation and valid subtraction equations
     else:
-        response = int(input("{} {} {} = ".format(one, operator, two)))
+        response = int(input("{} {} {} = ".format(num_one, operator, num_two)))
     # Checks if the response is correct or incorrect
     if response == answer:
         print("Correct")
@@ -81,13 +81,15 @@ def inequation_q(num_one, num_two):
     else:
         print("Incorrect")
 
-
+# Main Code goes here
 question_num = 0
 low = 1
 high = 20
-que_options = ["basic_facts", "inequation"]
+# Set up lists to generate randomly from
+que_options = ["basic_facts", "basic_facts", "inequation"]
 operators = ["+", "-", "x", "/"]
 
+# For loop to generate 5 questions
 for item in range(0,5):
 
     print("Question {}\n".format(question_num + 1))
@@ -97,4 +99,6 @@ for item in range(0,5):
         question = basic_facts_q(random.choice(operators), random.randint(low, high), random.randint(low, high))
     else:
         question = inequation_q(random.randint(low, high), random.randint(low, high))
-        question_num += 1
+
+    question_num += 1
+    high += 10
