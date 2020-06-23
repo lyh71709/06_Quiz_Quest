@@ -7,6 +7,7 @@ def int_check(question):
         try:
             response = int(input(question))
             return response
+
         # Error message
         except ValueError:
             print("Please enter an integer\n")

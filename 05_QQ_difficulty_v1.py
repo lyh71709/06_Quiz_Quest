@@ -1,6 +1,12 @@
+# Quiz Quest Component 5 - Difficulty
+
+# Fuse all previous components to make a work-in-progress while adding the slight modification
+#  of adding the 10 to the high variable after every question to make the game gradually more difficult
 
 import random
 
+
+# Intchecker function goes here
 def int_check(question):
     while True:
         try:
@@ -11,6 +17,8 @@ def int_check(question):
             print("Please enter an integer\n")
             continue
 
+
+# Basic facts function goes here
 def basic_facts_q(operator, num_one, num_two):
 
     # Addition question
@@ -43,8 +51,7 @@ def basic_facts_q(operator, num_one, num_two):
             continue
         answer = num_one / num_two
 
-    # Prints the question
-
+    # Prints the question and answer for testing purposes
     print(answer)
     if answer == 69:
         print("Hehe nice")
@@ -54,13 +61,17 @@ def basic_facts_q(operator, num_one, num_two):
     # Normal response for every equation and valid subtraction equations
     else:
         response = int(input("{} {} {} = ".format(num_one, operator, num_two)))
+
     # Checks if the response is correct or incorrect
     if response == answer:
         print("Correct")
     else:
         print("Incorrect")
-    print()
 
+    print()
+    return response
+
+# In-equation Function
 def inequation_q(num_one, num_two):
 
     # Code here determines the answer
@@ -75,11 +86,14 @@ def inequation_q(num_one, num_two):
     # I haven't put in an intchecker
     response = (input("[{} _ {}] What is the missing operator (</>/=)? ".format(num_one, num_two)))
 
-    #  Checks if the response matches the answer/ correct or incorrect
+    # Checks if the response is correct or incorrect
     if response == answer:
         print("Correct")
     else:
         print("Incorrect")
+
+    print()
+    return response
 
 # Main Code goes here
 question_num = 0
@@ -90,7 +104,10 @@ que_options = ["basic_facts", "basic_facts", "inequation"]
 operators = ["+", "-", "x", "/"]
 
 # For loop to generate 5 questions
+# In the real game the number of questions will exceed 5 questions
 for item in range(0,5):
+
+    print("High = {}    Low = {}\n".format(high, low))
 
     print("Question {}\n".format(question_num + 1))
     que_type = random.choice(que_options)
