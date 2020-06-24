@@ -23,10 +23,4 @@ def str_checker(question, to_check, error):
 for item in range(0,2):
     difficulty = str_checker("Difficulty (Easy, Normal or Hard): ",dif_range, "Hard, Normal or Easy").lower()
 
-    # Assigns the difficulty
-    if difficulty == "easy" or difficulty == "e":
-        print("Difficulty set to Easy\n")
-    elif difficulty == "normal" or difficulty == "n":
-        print("Difficulty set to Normal\n")
-    else:
-        print("Difficulty set to Hard\n")
+

@@ -32,7 +32,7 @@ def basic_facts_q(operator, num_one, num_two):
         cancel = "0"
         # If the first answer is a negative integer it will switch one and two around to make the answer positive
         if answer < 0:
-            cancel = "cancel"
+            cancel = ""
             answer = num_two - num_one
 
     # Multiplication question
@@ -46,8 +46,8 @@ def basic_facts_q(operator, num_one, num_two):
     else:
         # Added a while loop to generate valid numbers wehn dividing
         while (num_one/num_two) != (num_one//num_two):
-            num_one = random.randint(2, 50)
-            num_two = random.randint(2, 50)
+            num_one = random.randint(low, high)
+            num_two = random.randint(low, high)
             continue
         answer = num_one / num_two
 
@@ -56,11 +56,11 @@ def basic_facts_q(operator, num_one, num_two):
     if answer == 69:
         print("Hehe nice")
     # If statement when the subtraction equation is not valid
-    if operator == "-" and cancel == "cancel":
-        response = int(input("{} {} {} = ".format(num_two, operator, num_one)))
+    if operator == "-" and cancel == "":
+        response = int_check("{} {} {} = ".format(num_two, operator, num_one))
     # Normal response for every equation and valid subtraction equations
     else:
-        response = int(input("{} {} {} = ".format(num_one, operator, num_two)))
+        response = int_check("{} {} {} = ".format(num_one, operator, num_two))
 
     # Checks if the response is correct or incorrect
     if response == answer:
@@ -95,6 +95,7 @@ def inequation_q(num_one, num_two):
     print()
     return response
 
+
 # Main Code goes here
 question_num = 0
 low = 1
@@ -105,9 +106,9 @@ operators = ["+", "-", "x", "/"]
 
 # For loop to generate 5 questions
 # In the real game the number of questions will exceed 5 questions
-for item in range(0,5):
+for item in range(0,10):
 
-    print("High = {}    Low = {}\n".format(high, low))
+    print("High = {}    Low = {}    Question No. = {}\n".format(high, low, question_num))
 
     print("Question {}\n".format(question_num + 1))
     que_type = random.choice(que_options)
@@ -117,5 +118,6 @@ for item in range(0,5):
     else:
         question = inequation_q(random.randint(low, high), random.randint(low, high))
 
+    # Adds 1 to question number after every question and adds 8 to high to ensure question 10 has a high of 100
     question_num += 1
-    high += 10
+    high += 8
