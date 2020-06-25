@@ -1,7 +1,8 @@
 # Quiz Quest Component 1c - get user input for certain variables needed (Trialling)
+# I used Mrs Gottschalk's string checker and altered the code a bit to make it work with the rest of my code
 
 # String Checker Function
-dif_range = ["hard", "normal", "easy"]
+answer = ["yes", "no", "maybe"]
 
 # Mrs Gottschalk's string checker starts here (edited)
 def str_checker(question, to_check, error):
@@ -19,8 +20,17 @@ def str_checker(question, to_check, error):
         print("Please enter either {}\n".format(error))
 # Mrs Gottschalk's string checker ends here (edited)
 
-# For loop for testing purposes
-for item in range(0,2):
-    difficulty = str_checker("Difficulty (Easy, Normal or Hard): ",dif_range, "Hard, Normal or Easy").lower()
+# For loop loops three times for testing purposes
+for item in range(0,4):
+    question = str_checker("Is the sky blue? ", answer, "Yes, No or Maybe").lower()
+
+    # If statements to check if the question variable works as intended
+    if question == "yes" or question == "y":
+        print("Correct")
+    elif question == "no" or question == "n":
+        print("Incorrect")
+    else:
+        print("Pseudo-Correct")
+    print()
 
 

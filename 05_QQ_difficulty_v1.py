@@ -6,7 +6,22 @@
 import random
 
 
-# Intchecker function goes here
+# String Checker goes here
+def str_check(question, to_check, error):
+    valid = False
+    while not valid:
+
+        # Ask question
+        response = input(question).lower()
+
+        for item in to_check:
+            if response == item:
+                return response
+            elif response == item[0]:
+                return item
+        print("Please enter either {}\n".format(error))
+
+# Int-checker function goes here
 def int_check(question):
     while True:
         try:
@@ -84,7 +99,8 @@ def inequation_q(num_one, num_two):
 
     print(answer)
     # I haven't put in an intchecker
-    response = (input("[{} _ {}] What is the missing operator (</>/=)? ".format(num_one, num_two)))
+    inequations = ["<", ">", "="]
+    response = str_check("[{} _ {}] What is the missing operator (</>/=)? ".format(num_one, num_two), inequations, "<, > or =")
 
     # Checks if the response is correct or incorrect
     if response == answer:
