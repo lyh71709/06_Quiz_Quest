@@ -68,8 +68,7 @@ def basic_facts_q(operator, num_one, num_two):
 
     # Prints the question and answer for testing purposes
     print(answer)
-    if answer == 69:
-        print("Hehe nice")
+
     # If statement when the subtraction equation is not valid
     if operator == "-" and cancel == "":
         response = int_check("{} {} {} = ".format(num_two, operator, num_one))
@@ -115,14 +114,14 @@ def inequation_q(num_one, num_two):
 # Main Code goes here
 question_num = 0
 low = 1
-high = 20
+high = 25
 # Set up lists to generate randomly from
 que_options = ["basic_facts", "basic_facts", "inequation"]
 operators = ["+", "-", "x", "/"]
 
 # For loop to generate 5 questions
 # In the real game the number of questions will exceed 5 questions
-for item in range(0,10):
+for item in range(0,15):
 
     print("High = {}    Low = {}    Question No. = {}\n".format(high, low, question_num))
 
@@ -136,4 +135,4 @@ for item in range(0,10):
 
     # Adds 1 to question number after every question and adds 8 to high to ensure question 10 has a high of 100
     question_num += 1
-    high += 8
+    high += 5
