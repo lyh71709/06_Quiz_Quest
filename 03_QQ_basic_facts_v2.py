@@ -41,10 +41,6 @@ def basic_facts_q(operator, one, two):
         answer = one / two
 
     # Prints the question
-
-    print(answer)
-    if answer == 69:
-        print("Hehe nice")
     # If statement when the subtraction equation is not valid
     if operator == "-" and cancel == "cancel":
         response = int(input("{} {} {} = ".format(two, operator, one)))

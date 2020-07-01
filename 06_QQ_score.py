@@ -132,12 +132,14 @@ for item in range(0,5):
     question_num += 1
     high += 5
 
+    #
     outcome.append(question)
     correct_num = outcome.count("Correct")
 
+# Overall Game Stats are done here
 list_count = 1
 print("Game Results")
-print("You got {} / 15 correct\n".format(correct_num))
+print("You got {} / 5 correct\n".format(correct_num))
 
 for thing in outcome:
     print("Question {}: {}".format(list_count, thing))
