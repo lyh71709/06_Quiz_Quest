@@ -1,7 +1,7 @@
 # Quiz Quest Component 5 - Difficulty
 
 # Fuse all previous components to make a work-in-progress while adding the slight modification
-#  of adding the 10 to the high variable after every question to make the game gradually more difficult
+#  of adding the 5 to the high variable after every question to make the game gradually more difficult
 
 import random
 
