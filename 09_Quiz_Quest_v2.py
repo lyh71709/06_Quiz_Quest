@@ -1,5 +1,8 @@
 # Quiz Quest - Final Game
 # v1 - Before usability test
+# v2 - After usability test
+#      Include things like clearer instructions in the introduction
+
 import random
 
 
@@ -44,7 +47,6 @@ def int_check(question):
 
 # Basic facts function goes here
 def basic_facts_q(operator, num_one, num_two):
-    answer = 0
     product = 0
     cancel = ""
 
@@ -130,7 +132,9 @@ print("This is a maths game where you answer basic facts and in-equation questio
       "game asks you how many questions you want to do and will stop the game once you have finished\n"
       "answering your chosen amount of questions. Continuous Play is where the game will loop forever\n"
       "until whenever you wish to stop, after each question the game will ask if you want to stop playing\n"
-      "after every question.\n"
+      "after every question. Whenever you input anything remember to press <enter> once to input it.\n"
+      "You will get questions like basic facts which are fairly easy to understand but then in-equation\n"
+      "questions mean that you have to fill in the underscore with the greater than, less than or equal sign."
       "Alright so have fun! and let the game begin!")
 print()
 
@@ -168,14 +172,14 @@ while keep_going == "":
     question_counter = qq_statement("(☞ﾟヮﾟ)☞  Question {}  ☜(ﾟヮﾟ☜)   ".format(question_num + 1), "=")
     que_type = random.choice(que_options)
 
-    # Variable "Question" is returned as either Correct or Incorrect a.k.a. the que_outcome
+    # Variable "equation" is returned as either Correct or Incorrect a.k.a. the que_outcome
     if que_type == "basic_facts":
-        question = basic_facts_q(random.choice(operators), random.randint(low, high), random.randint(low, high))
+        equation = basic_facts_q(random.choice(operators), random.randint(low, high), random.randint(low, high))
     else:
-        question = inequation_q(random.randint(low, high), random.randint(low, high))
+        equation = inequation_q(random.randint(low, high), random.randint(low, high))
 
     # Adds variables to lists so that they can be printed as stats
-    outcome.append(question)
+    outcome.append(equation)
     correct_num = outcome.count("Correct")
 
     # Checks the gamemode then responds accordingly
