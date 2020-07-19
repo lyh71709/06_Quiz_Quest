@@ -2,7 +2,7 @@
 
 import random
 
-# Low and hogh is set
+# Low and high is set to 1 and 4 to test if all numbers are printed
 low = 1
 high = 4
 

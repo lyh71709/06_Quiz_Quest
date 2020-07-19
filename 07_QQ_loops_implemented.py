@@ -1,4 +1,4 @@
-# Quiz Quest Component 6 - Score Keeping
+# Quiz Quest Component 8 - Allows users to choose between continuous play or chosen play
 
 import random
 
@@ -32,6 +32,8 @@ def int_check(question):
 
 # Basic facts function goes here
 def basic_facts_q(operator, num_one, num_two):
+    answer = 0
+    cancel = ""
 
     # Addition question
     if operator == "+":
@@ -39,12 +41,12 @@ def basic_facts_q(operator, num_one, num_two):
 
     # Subtraction question
     elif operator == "-":
-        # Ensures that the difference is a postive integer or 0
+        # Ensures that the difference is a positive integer or 0
         answer = num_one - num_two
         cancel = "0"
-        # If the first answer is a negative integer it will switch one and two around to make the answer positive
+        # If the first answer is a negative integer it will switch num_one and num_two around to make the answer positive
         if answer < 0:
-            cancel = ""
+            cancel = "cancel"
             answer = num_two - num_one
 
     # Multiplication question
@@ -56,22 +58,20 @@ def basic_facts_q(operator, num_one, num_two):
 
     # Divide question
     else:
-        # Added a while loop to generate valid numbers wehn dividing
-        while (num_one/num_two) != (num_one//num_two):
-            num_one = random.randint(low, high)
-            num_two = random.randint(low, high)
-            continue
-        answer = num_one / num_two
+        num_one = random.randint(0, 12)
+        num_two = random.randint(0, 12)
+        product = num_one * num_two
+        answer = num_two
 
-    # Prints the question and answer for testing purposes
-    print(answer)
-
+    # Prints the question
     # If statement when the subtraction equation is not valid
-    if operator == "-" and cancel == "":
-        response = int_check("{} {} {} = ".format(num_two, operator, num_one))
+    if operator == "-" and cancel == "cancel":
+        response = int(input("{} {} {} = ".format(num_two, operator, num_one)))
+    elif operator == "/":
+        response = int(input("{} {} {} = ".format(product, operator, num_one)))
     # Normal response for every equation and valid subtraction equations
     else:
-        response = int_check("{} {} {} = ".format(num_one, operator, num_two))
+        response = int(input("{} {} {} = ".format(num_one, operator, num_two)))
 
     # Checks if the response is correct or incorrect
     if response == answer:
@@ -94,7 +94,7 @@ def inequation_q(num_one, num_two):
         answer = "="
 
     print(answer)
-    # I haven't put in an intchecker
+    # I haven't put in an int checker
     inequations = ["<", ">", "="]
     response = str_check("[{} _ {}] What is the missing operator (</>/=)? ".format(num_one, num_two), inequations, "<, > or =")
 
@@ -109,37 +109,66 @@ def inequation_q(num_one, num_two):
 
 
 # Main Code goes here
+
+# Asks for the gamemode
+gamemodes = ["1", "2"]
+how_many_que = 0
+print("1 for Chosen Play (Choosing a set number of questions) or 2 for Continuous Play")
+game_mode = str_check("What gamemode do you want? (1 or 2): ", gamemodes, "1 for Chosen Play or 2 for Continuous Play")
+
+if game_mode == "1":
+    message = "Chosen Play"
+else:
+    message = "Continuous Play"
+
+print("You are playing {}\n".format(message))
+
+# Checks if code is in Chosen Play, if so then asks for how many questions
+if game_mode == "1":
+    how_many_que = int(input("How many questions do you want? "))
+
 question_num = 0
+correct_num = 0
 outcome = []
 low = 1
-high = 25
+high = 50
 # Set up lists to generate randomly from
 que_options = ["basic_facts", "basic_facts", "inequation"]
 operators = ["+", "-", "x", "/"]
 
-# For loop to generate 5 questions
-# In the real game the number of questions will exceed 5 questions
-for item in range(0,5):
+# While loop for main code goes here
+keep_going = ""
+while keep_going == "":
+
     print("Question {}\n".format(question_num + 1))
     que_type = random.choice(que_options)
 
+    # Variable "Question" is returned as either Correct or Incorrect a.k.a. the que_outcome
     if que_type == "basic_facts":
         question = basic_facts_q(random.choice(operators), random.randint(low, high), random.randint(low, high))
     else:
         question = inequation_q(random.randint(low, high), random.randint(low, high))
 
-    # Adds 1 to question number after every question and adds 8 to high to ensure question 10 has a high of 100
-    question_num += 1
-    high += 5
-
-    #
+    # Adds variables to lists so that they can be printed as stats
     outcome.append(question)
     correct_num = outcome.count("Correct")
 
+    # Checks the gamemode then responds accordingly
+    if game_mode == "2":
+        # When in continuous mode asks user to play again
+        keep_going = input("Press <ENTER> to play again or any key to quit ")
+    else:
+        # When in chosen mode stops the loop when the num of questions is reached
+        if how_many_que == (question_num + 1):
+            keep_going = "stop"
+
+    # Adds 1 to question number after every question
+    question_num += 1
+
 # Overall Game Stats are done here
 list_count = 1
-print("Game Results")
-print("You got {} / 5 correct\n".format(correct_num))
+print("\nGame Results")
+print("You got {} / {} correct\n".format(correct_num, question_num))
 
 for thing in outcome:
     print("Question {}: {}".format(list_count, thing))

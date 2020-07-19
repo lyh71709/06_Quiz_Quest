@@ -1,7 +1,4 @@
-# Quiz Quest Component 5 - Difficulty
-
-# Fuse all previous components to make a work-in-progress while adding the slight modification
-#  of adding the 5 to the high variable after every question to make the game gradually more difficult
+# Quiz Quest Component 6 - Score Keeping
 
 import random
 
@@ -35,6 +32,8 @@ def int_check(question):
 
 # Basic facts function goes here
 def basic_facts_q(operator, num_one, num_two):
+    answer = 0
+    cancel = ""
 
     # Addition question
     if operator == "+":
@@ -42,12 +41,12 @@ def basic_facts_q(operator, num_one, num_two):
 
     # Subtraction question
     elif operator == "-":
-        # Ensures that the difference is a postive integer or 0
+        # Ensures that the difference is a positive integer or 0
         answer = num_one - num_two
         cancel = "0"
-        # If the first answer is a negative integer it will switch one and two around to make the answer positive
+        # If the first answer is a negative integer it will switch num_one and num_two around to make the answer positive
         if answer < 0:
-            cancel = ""
+            cancel = "cancel"
             answer = num_two - num_one
 
     # Multiplication question
@@ -59,31 +58,29 @@ def basic_facts_q(operator, num_one, num_two):
 
     # Divide question
     else:
-        # Added a while loop to generate valid numbers wehn dividing
-        while (num_one/num_two) != (num_one//num_two):
-            num_one = random.randint(low, high)
-            num_two = random.randint(low, high)
-            continue
-        answer = num_one / num_two
+        num_one = random.randint(0, 12)
+        num_two = random.randint(0, 12)
+        product = num_one * num_two
+        answer = num_two
 
-    # Prints the question and answer for testing purposes
-    print(answer)
-
+    # Prints the question
     # If statement when the subtraction equation is not valid
-    if operator == "-" and cancel == "":
-        response = int_check("{} {} {} = ".format(num_two, operator, num_one))
+    if operator == "-" and cancel == "cancel":
+        response = int(input("{} {} {} = ".format(num_two, operator, num_one)))
+    elif operator == "/":
+        response = int(input("{} {} {} = ".format(product, operator, num_one)))
     # Normal response for every equation and valid subtraction equations
     else:
-        response = int_check("{} {} {} = ".format(num_one, operator, num_two))
+        response = int(input("{} {} {} = ".format(num_one, operator, num_two)))
 
     # Checks if the response is correct or incorrect
     if response == answer:
-        print("Correct")
+        que_outcome = "Correct"
+        print(que_outcome + "\n")
     else:
-        print("Incorrect")
-
-    print()
-    return response
+        que_outcome = "Incorrect"
+        print(que_outcome + " the correct answer was {}\n".format(answer))
+    return que_outcome
 
 # In-equation Function
 def inequation_q(num_one, num_two):
@@ -103,28 +100,26 @@ def inequation_q(num_one, num_two):
 
     # Checks if the response is correct or incorrect
     if response == answer:
-        print("Correct")
+        que_outcome = "Correct"
+        print(que_outcome + "\n")
     else:
-        print("Incorrect")
-
-    print()
-    return response
+        que_outcome = "Incorrect"
+        print(que_outcome + " the correct answer was {}\n".format(answer))
+    return que_outcome
 
 
 # Main Code goes here
 question_num = 0
+outcome = []
 low = 1
-high = 25
+high = 50
 # Set up lists to generate randomly from
 que_options = ["basic_facts", "basic_facts", "inequation"]
 operators = ["+", "-", "x", "/"]
 
 # For loop to generate 5 questions
 # In the real game the number of questions will exceed 5 questions
-for item in range(0,15):
-
-    print("High = {}    Low = {}    Question No. = {}\n".format(high, low, question_num))
-
+for item in range(0,5):
     print("Question {}\n".format(question_num + 1))
     que_type = random.choice(que_options)
 
@@ -133,6 +128,18 @@ for item in range(0,15):
     else:
         question = inequation_q(random.randint(low, high), random.randint(low, high))
 
-    # Adds 1 to question number after every question and adds 8 to high to ensure question 10 has a high of 100
+    # Adds 1 to question number after every question
     question_num += 1
-    high += 5
+
+    # Adds variables to lists so that they can be printed as stats
+    outcome.append(question)
+    correct_num = outcome.count("Correct")
+
+# Overall Game Stats are done here
+list_count = 1
+print("Game Results")
+print("You got {} / 5 correct\n".format(correct_num))
+
+for thing in outcome:
+    print("Question {}: {}".format(list_count, thing))
+    list_count += 1
