@@ -5,7 +5,6 @@
 
 import random
 
-
 # String Checker goes here
 def str_check(question, to_check, error):
     valid = False
