@@ -1,6 +1,5 @@
 # Quiz Quest Component 1b - get user input for certain variables needed
 
-# Difficulty Selection
 valid = False
 while not valid:
     answer = input("Yes or No: ").lower()

@@ -1,29 +1,29 @@
-# Quiz Quest Component 3 - Generate basic fact questions from the random numbers generated
+# Quiz Quest Compnum_onent 3 - Generate basic fact questions from the random numbers generated
 
 import random
 
 # Function for Basic facts questions goes here
-def basicfacts_q(operator,one,two):
+def basicfacts_q(operator,num_one,num_two):
 
     # Addition question
     if operator == "+":
-        answer = one + two
+        answer = num_one + num_two
 
     # Subtraction question
     elif operator == "-":
-        answer = one - two
+        answer = num_one - num_two
 
     # Multiplication question
     elif operator == "x":
-        answer = one * two
+        answer = num_one * num_two
 
     # Divide question
     else:
-        answer = one / two
+        answer = num_one / num_two
 
     # Prints the question
     print(answer)
-    response = int(input("{} {} {} = ".format(one,operator,two)))
+    response = int(input("{} {} {} = ".format(num_one,operator,num_two)))
 
     # Checks if the response is correct or incorrect
     if response == answer:
