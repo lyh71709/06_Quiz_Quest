@@ -26,5 +26,5 @@ print()
 # Makes a question counter statement
 # For loop to test if the question num changes
 for item in range(0,3):
-    question_counter = qq_statement("(☞ﾟヮﾟ)☞  Question {}  ☜(ﾟヮﾟ☜)   ".format(question_num), "-")
+    question_counter = qq_statement("(☞ﾟヮﾟ)☞  Question {}  ☜(ﾟヮﾟ☜)   ".format(question_num), "=")
     question_num += 1

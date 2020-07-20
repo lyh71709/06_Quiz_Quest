@@ -21,7 +21,7 @@ def basicfacts_q(operator,num_one,num_two):
     else:
         answer = num_one / num_two
 
-    # Prints the question
+    # Prints the question and answer for testing purposes
     print(answer)
     response = int(input("{} {} {} = ".format(num_one,operator,num_two)))
 

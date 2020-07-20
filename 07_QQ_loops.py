@@ -1,6 +1,6 @@
 # Quiz Quest Component 8 - Allows users to choose between continuous play or chosen play
 
-game_mode = int(input("1 or 2"))
+game_mode = int(input("1 or 2 "))
 
 if game_mode == 1:
     how_many_que = int(input("How many questions? "))
@@ -10,6 +10,7 @@ keep_going = ""
 while keep_going == "":
 
     # Main code goes here
+    print("Question {}".format(question_num + 1))
     answer = input("Integer: ")
     question_num += 1
     if game_mode == 2:

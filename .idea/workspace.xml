@@ -38,7 +38,7 @@
       <recent name="C:\Users\Henry\Documents\GitHub\06_Quiz_Quest" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.09_Quiz_Quest_v1">
+  <component name="RunManager" selected="Python.07_QQ_loops">
     <configuration default="true" type="tests" factoryName="Attests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -57,27 +57,6 @@
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
       <method />
-    </configuration>
-    <configuration name="03_QQ_basic_facts_v2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="06_Quiz_Quest" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/03_QQ_basic_facts_v2.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
     </configuration>
     <configuration name="05_QQ_score" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="06_Quiz_Quest" />
@@ -100,6 +79,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="06_QQ_statment_generator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="06_Quiz_Quest" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/06_QQ_statment_generator.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="07_QQ_loops" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="06_Quiz_Quest" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -112,7 +112,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\Henry\Documents\GitHub\06_Quiz_Quest\07_QQ_loops.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/07_QQ_loops.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -133,7 +133,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\Henry\Documents\GitHub\06_Quiz_Quest\07_QQ_loops_implemented.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/07_QQ_loops_implemented.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -142,7 +142,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="09_Quiz_Quest_v1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="08_QQ_introduction" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="06_Quiz_Quest" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -154,7 +154,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/09_Quiz_Quest_v1.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/08_QQ_introduction.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -164,19 +164,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.07_QQ_loops" />
-      <item itemvalue="Python.07_QQ_loops_implemented" />
-      <item itemvalue="Python.03_QQ_basic_facts_v2" />
       <item itemvalue="Python.05_QQ_score" />
-      <item itemvalue="Python.09_Quiz_Quest_v1" />
+      <item itemvalue="Python.08_QQ_introduction" />
+      <item itemvalue="Python.06_QQ_statment_generator" />
+      <item itemvalue="Python.07_QQ_loops_implemented" />
+      <item itemvalue="Python.07_QQ_loops" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.09_Quiz_Quest_v1" />
-        <item itemvalue="Python.05_QQ_score" />
-        <item itemvalue="Python.03_QQ_basic_facts_v2" />
-        <item itemvalue="Python.07_QQ_loops_implemented" />
         <item itemvalue="Python.07_QQ_loops" />
+        <item itemvalue="Python.07_QQ_loops_implemented" />
+        <item itemvalue="Python.06_QQ_statment_generator" />
+        <item itemvalue="Python.08_QQ_introduction" />
+        <item itemvalue="Python.05_QQ_score" />
       </list>
     </recent_temporary>
   </component>
@@ -207,22 +207,22 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state width="1899" height="315" key="GridCell.Tab.0.bottom" timestamp="1595154053976">
+    <state width="1899" height="2" key="GridCell.Tab.0.bottom" timestamp="1595236059918">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="315" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595154053976" />
-    <state width="1899" height="315" key="GridCell.Tab.0.center" timestamp="1595154053976">
+    <state width="1899" height="2" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595236059918" />
+    <state width="1899" height="2" key="GridCell.Tab.0.center" timestamp="1595236059918">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="315" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595154053976" />
-    <state width="1899" height="315" key="GridCell.Tab.0.left" timestamp="1595154053976">
+    <state width="1899" height="2" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595236059918" />
+    <state width="1899" height="2" key="GridCell.Tab.0.left" timestamp="1595236059918">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="315" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595154053976" />
-    <state width="1899" height="315" key="GridCell.Tab.0.right" timestamp="1595154053976">
+    <state width="1899" height="2" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595236059918" />
+    <state width="1899" height="2" key="GridCell.Tab.0.right" timestamp="1595236059918">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="315" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595154053976" />
+    <state width="1899" height="2" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595236059918" />
     <state x="463" y="165" key="SettingsEditor" timestamp="1595067136291">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

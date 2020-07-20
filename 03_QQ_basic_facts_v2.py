@@ -40,6 +40,9 @@ def basic_facts_q(operator, num_one, num_two):
         product = num_one * num_two
         answer = num_two
 
+    # prints answer for testing purposes
+    print(answer)
+
     # Prints the question
     # If statement when the subtraction equation is not valid
     if operator == "-" and cancel == "cancel":
